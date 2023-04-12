@@ -15,14 +15,17 @@ let count_span = document.getElementById('count');
 //Setup click events for increase, reset, and decrease buttons
 increaseButton.addEventListener('click', function(){
     increase();
+    colorChange();
 })
 
 resetButton.addEventListener('click', function(){
     reset();
+    colorChange();
 })
 
 decreaseButton.addEventListener('click', function(){
     decrease();
+    colorChange();
 })
 
 // setup functions for each button to increase, decrease and reset counter
@@ -40,3 +43,16 @@ function reset(){
     counter--;
     count_span.innerHTML = counter;
  }
+
+ function colorChange(){
+    if (counter > 0){
+       count_span.style.color = "green";
+    };
+    if (counter < 0){
+        count_span.style.color = "red";
+    }
+    if (counter == 0){
+        count_span.style.color = "white";
+    }
+
+ };
